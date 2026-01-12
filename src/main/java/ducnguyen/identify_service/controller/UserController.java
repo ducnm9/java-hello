@@ -9,6 +9,8 @@ import ducnguyen.identify_service.dto.request.UserCreationRequest;
 import ducnguyen.identify_service.dto.request.UserUpdateRequest;
 import ducnguyen.identify_service.entity.User;
 import ducnguyen.identify_service.service.UserService;
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,7 +25,7 @@ public class UserController {
 
 
     @PostMapping("/users")
-    public User postUser(@RequestBody UserCreationRequest request) {
+    public User postUser(@RequestBody @Valid UserCreationRequest request) {
         return userService.createRequest(request);
     }
 
