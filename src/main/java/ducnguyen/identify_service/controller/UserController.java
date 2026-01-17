@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import ducnguyen.identify_service.dto.request.ApiResponse;
 import ducnguyen.identify_service.dto.request.UserCreationRequest;
 import ducnguyen.identify_service.dto.request.UserUpdateRequest;
 import ducnguyen.identify_service.entity.User;
@@ -25,8 +26,10 @@ public class UserController {
 
 
     @PostMapping("/users")
-    public User postUser(@RequestBody @Valid UserCreationRequest request) {
-        return userService.createRequest(request);
+    public ApiResponse<User> postUser(@RequestBody @Valid UserCreationRequest request) {
+        ApiResponse<User> apiResponse = new ApiResponse<>();
+        apiResponse.setResult(userService.createRequest(request));
+        return apiResponse;
     }
 
     @GetMapping("/users")
