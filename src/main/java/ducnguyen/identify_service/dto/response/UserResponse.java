@@ -1,8 +1,7 @@
-package ducnguyen.identify_service.dto.request;
+package ducnguyen.identify_service.dto.response;
 
 import java.time.LocalDate;
 
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,14 +9,13 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @FieldDefaults(level = lombok.AccessLevel.PRIVATE)
-public class UserCreationRequest {
-    @Size(min = 5, message = "USERNAME_INVALID")
+public class UserResponse {
+    String id;
     String username;
-    @Size(min = 8, message = "INVALID_PASSWORD")
     String password;
     String firstName;
     String lastName;
