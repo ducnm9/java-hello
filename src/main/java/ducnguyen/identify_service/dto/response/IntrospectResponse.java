@@ -11,7 +11,6 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = lombok.AccessLevel.PRIVATE)
-public class AuthenticationResponse {
-    String token;
-    boolean authenticated;
+public class IntrospectResponse {
+    boolean valid;
 }

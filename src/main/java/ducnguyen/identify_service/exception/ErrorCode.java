@@ -9,6 +9,7 @@ public enum ErrorCode {
     INTERNAL_SERVER_ERROR(1004, "Internal server error"),
     USERNAME_INVALID(1005, "Username must be between 3 and 20 characters"),
     INVALID_PASSWORD(1006, "Password must be at least 8 characters long"),
+    UNAUTHENTICATED(1007, "Authentication is required to access this resource"),
     ;
 
     ErrorCode(int code, String message) {
